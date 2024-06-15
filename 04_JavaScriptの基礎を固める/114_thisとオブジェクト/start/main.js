@@ -2,11 +2,19 @@ const obj = {
     first_name: 'Mafia',
     last_name: 'Code',
     printFullName: function() {
-        console.log(this.first_name);
+        console.log(this.first_name); 
         const fn = function() {
             console.log(this);
-        };
-        window.setTimeout(fn);  
+        }
+        window.setTimeout(function() {
+            console.log(this);
+        })
+    }
+}
+
+const window = {
+    setTimeout: function(fn){
+        fn();
     }
 }
 
@@ -18,10 +26,6 @@ class MyObj {
 
     printFullName() {
         console.log(this.first_name);
-        const fn = function() {
-            console.log(this);
-        };
-        window.setTimeout(fn)   
     }
 }
 
