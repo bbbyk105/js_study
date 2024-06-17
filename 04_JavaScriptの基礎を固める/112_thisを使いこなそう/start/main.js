@@ -26,3 +26,4 @@ class TextAnimation {
         this.el.classList.toggle('inview');
     }
 }
+ 
