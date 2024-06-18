@@ -14,7 +14,8 @@ const cb = function(entries, observer) {
 }
 const options = {
     root: null,
-    rootMargin: "0px";
+    rootMargin: "0px",
+    
 }
 const io = new IntersectionObserver(cb, options);
 io.observe(child);
