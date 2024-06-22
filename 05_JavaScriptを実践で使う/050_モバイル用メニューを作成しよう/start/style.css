@@ -1,10 +1,10 @@
-.mobile-menu-icon {
+.mobile-menu__btn {
   background-color: unset;
   border: none;
   outline: none !important;
   cursor: pointer;
 }
-.mobile-menu-icon > span {
+.mobile-menu__btn > span {
   background-color: black;
   width: 35px;
   height: 2px;
@@ -12,7 +12,7 @@
   margin-bottom: 9px;
   transition: transform 0.7s;
 }
-.mobile-menu-icon > span:last-child {
+.mobile-menu__btn > span:last-child {
   margin-bottom: 0;
 }
 
