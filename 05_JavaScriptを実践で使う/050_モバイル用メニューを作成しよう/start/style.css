@@ -72,6 +72,17 @@ body {
   text-decoration: none;
 }
 
+.main-title {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.sub-title {
+  display: block;
+  font-size: 14px;
+  color: #535353;
+}
+
 .menu-open #container {
   transform: translate(-300px, 60px);
   box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);

@@ -2,6 +2,7 @@ $cWhite: white;
 $cBlack: black;
 $cMenuClose: $cBlack;
 $cMenuOpen: $cBlack;
+$cSubTitle: #535353;
 
 
 #container {
@@ -61,6 +62,7 @@ body {
         transition: opacity 1s;
         cursor: pointer;
     }
+
     &__main {
         padding: 0;
         perspective: 2000px;
@@ -81,6 +83,15 @@ body {
         text-decoration: none;
     }
     
+}
+.main-title {
+    font-weight: 600;
+    font-size: 25px;
+}
+.sub-title {
+    display: block;
+    font-size: 14px;
+    color: $cSubTitle;
 }
 
 .menu-open {
