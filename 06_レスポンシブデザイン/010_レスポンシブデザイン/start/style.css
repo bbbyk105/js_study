@@ -1,12 +1,10 @@
-@import url("mobile.css") screen and (max-width: 600px);
-@import url("desktop.css") screen and (min-width: 601px);
-@media screen and (max-width: 600px) {
-  h1 {
-    color: red;
-  }
+h1 {
+  color: red;
+  background-color: yellow;
 }
-@media screen and (min-width: 600px) {
+
+@media (webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   h1 {
-    color: blue;
+    color: purple;
   }
 }/*# sourceMappingURL=style.css.map */
