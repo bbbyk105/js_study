@@ -1,12 +1,22 @@
+@use "mq" as *;
 // モバイル用のスタイル
 h1 {
   color: red;
   background: yellow;
-}
 
-// デスクトップ用のスタイル
-@media screen and (min-width: 601px) {
-  h1 {
+  @include mq(sm) {
     color: blue;
+  }
+
+  @include mq(md) {
+    color: purple;
+  }
+  
+  @include mq(lg) {
+    color: green;
+  }
+  
+  @include mq(xl) {
+    color: orange;
   }
 }
