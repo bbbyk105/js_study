@@ -168,19 +168,46 @@
     padding: 60px 0;
     @extend .content-width;
 
-}
-
-.logo {
-    font-size: 42px;
-    display: flex;
-
     &__nav {
         @extend .flex;
         justify-content: space-between;
         align-items: cover;
         text-align: center;
-    
     }
+
+    &__ul {
+        @extend .flex;
+        list-style: none;
+        padding: 0;
+    }
+
+    &__li {
+        margin: 10px;
+
+        @include mq(md) {
+            margin-left: 0;
+            margin-right: 30px;
+        }
+
+        & > a {
+            color: $cSubTitle;
+            text-decoration: none;
+        }
+    }
+
+    & > .logo {
+        font-size: 38px;
+        justify-content: center;
+
+        @include mq(md) {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.logo {
+    font-size: 42px;
+    display: flex;
 
     &__image {
         width: 0.7em;

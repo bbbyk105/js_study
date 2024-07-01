@@ -675,12 +675,12 @@ img {
   max-width: 1070px;
 }
 
-.flex, .travel__inner, .houses__inner, .popular__container, .logo__nav {
+.flex, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 600px) {
-  .flex, .travel__inner, .houses__inner, .popular__container, .logo__nav {
+  .flex, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -868,15 +868,41 @@ img {
 .footer {
   padding: 60px 0;
 }
+.footer__nav {
+  justify-content: space-between;
+  align-items: cover;
+  text-align: center;
+}
+.footer__ul {
+  list-style: none;
+  padding: 0;
+}
+.footer__li {
+  margin: 10px;
+}
+@media screen and (min-width: 600px) {
+  .footer__li {
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}
+.footer__li > a {
+  color: #535353;
+  text-decoration: none;
+}
+.footer > .logo {
+  font-size: 38px;
+  justify-content: center;
+}
+@media screen and (min-width: 600px) {
+  .footer > .logo {
+    justify-content: flex-start;
+  }
+}
 
 .logo {
   font-size: 42px;
   display: flex;
-}
-.logo__nav {
-  justify-content: space-between;
-  align-items: cover;
-  text-align: center;
 }
 .logo__image {
   width: 0.7em;
