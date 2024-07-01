@@ -39,7 +39,7 @@
   }
 
   &__texts {
-    @extend .pd-sm;
+    @extend .pb-sm;
 
     @include mq(md) {
       display: flex;
@@ -161,4 +161,36 @@
     flex-basis: 100%;
     @extend .mb-lg;
   }
+  
 }
+
+.footer {
+    padding: 60px 0;
+    @extend .content-width;
+
+}
+
+.logo {
+    font-size: 42px;
+    display: flex;
+
+    &__nav {
+        @extend .flex;
+        justify-content: space-between;
+        align-items: cover;
+        text-align: center;
+    
+    }
+
+    &__image {
+        width: 0.7em;
+    }
+
+    &__world {
+        color: $cWineRed;
+    }
+}
+
+
+
+
