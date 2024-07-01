@@ -643,15 +643,15 @@ img {
   vertical-align: bottom;
 }
 
-.mb-sm, .houses__title {
+.mb-sm, .houses__title, .popular__title {
   margin-bottom: 16px !important;
 }
 
-.mb-lg, .houses {
+.mb-lg, .houses, .popular__btn {
   margin-bottom: 80px !important;
 }
 @media screen and (min-width: 960px) {
-  .mb-lg, .houses {
+  .mb-lg, .houses, .popular__btn {
     margin-bottom: 150px !important;
   }
 }
@@ -669,18 +669,18 @@ img {
   }
 }
 
-.content-width, .houses {
+.content-width, .houses, .popular__header, .popular__container {
   width: 90%;
   margin: 0 auto;
   max-width: 1070px;
 }
 
-.flex, .houses__inner {
+.flex, .houses__inner, .popular__container {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 600px) {
-  .flex, .houses__inner {
+  .flex, .houses__inner, .popular__container {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -704,11 +704,11 @@ img {
   }
 }
 
-.font-md {
+.font-md, .popular__title {
   font-size: 17px;
 }
 @media screen and (min-width: 960px) {
-  .font-md {
+  .font-md, .popular__title {
     font-size: 19px;
   }
 }
@@ -752,6 +752,55 @@ img {
   }
 }
 .houses__btn {
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.popular__inner {
+  position: relative;
+}
+.popular__inner::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 90%;
+  width: 100%;
+  background-color: #eaebe6;
+}
+.popular__container {
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+}
+@media screen and (min-width: 600px) {
+  .popular__item {
+    flex-basis: 47%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .popular__item {
+    flex-basis: 25%;
+  }
+}
+.popular__img {
+  height: 150px;
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 960px) {
+  .popular__img {
+    height: 360px;
+  }
+}
+.popular__img > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.popular__btn {
   text-align: center;
   flex-basis: 100%;
 }/*# sourceMappingURL=style.css.map */
