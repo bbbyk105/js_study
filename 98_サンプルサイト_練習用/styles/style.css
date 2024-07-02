@@ -753,6 +753,16 @@ img {
   transition: transform 0.5s, box-shadow 0.5s;
 }
 
+#main-content {
+  position: relative;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: -1;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -982,4 +992,63 @@ img {
 }
 .logo__world {
   color: #904669;
+}
+
+.side {
+  display: none;
+  position: fixed;
+  top: 70%;
+  translate: translateY(-50%);
+}
+@media screen and (min-width: 1280px) {
+  .side {
+    display: block;
+  }
+}
+.side .tween-animate-title {
+  color: black;
+  text-decoration: none !important;
+  margin: 0 40px;
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+.side__inner {
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+.side.left {
+  left: 50px;
+}
+.side.left .side__inner {
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+.side.right {
+  right: 50px;
+}
+.side.right .side__inner {
+  transform-origin: top right;
+  transform: rotate(90deg);
+}
+
+.icon {
+  position: relative;
+}
+.icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 1em;
+  height: 1em;
+  transform: translateY(-50%);
+  background-position: center;
+  background-repeat: none;
+  background-size: contain;
+}
+.icon.twitter::before {
+  background-image: url(../images/twitter.svg);
+}
+.icon.fb::before {
+  background-image: url(../images/facebook.svg);
 }/*# sourceMappingURL=style.css.map */
