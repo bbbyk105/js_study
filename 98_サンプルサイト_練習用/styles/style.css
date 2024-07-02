@@ -746,6 +746,13 @@ img {
   color: #535353;
 }
 
+#container {
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -756,6 +763,10 @@ img {
   display: flex;
   align-items: center;
   z-index: 100;
+}
+.header.triggered {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 10px 0 25px -10px rgba 0, 0, 0, 0.5;
 }
 .header__inner {
   display: flex;
@@ -789,15 +800,16 @@ img {
   }
 }
 .header__li > a {
-  color: #535353;
+  color: black;
   text-decoration: none;
+  text-transform: uppercase;
 }
-.header > .logo {
-  font-size: 38px;
+.header .logo {
+  font-size: 35px;
   justify-content: center;
 }
 @media screen and (min-width: 600px) {
-  .header > .logo {
+  .header .logo {
     justify-content: flex-start;
   }
 }
