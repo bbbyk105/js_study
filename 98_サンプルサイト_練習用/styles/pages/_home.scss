@@ -1,6 +1,23 @@
 @use "../globals" as *;
 @use "../parts/common" as *;
 
+#container {
+  background-color: $cWhite;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+#main-content {
+  position: relative;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: -1;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -11,6 +28,11 @@
     display: flex;
     align-items: center;
     z-index: 100;
+
+    &.triggered {
+      background-color: rgba(255,255,255,0.9);
+      box-shadow: 10px 0 25px -10px rgba (0,0,0,0.5)  ;
+    }
 
     &__inner {
         display: flex;
@@ -47,13 +69,14 @@
         }
 
         & > a {
-            color: $cSubTitle;
+            color: $cBlack;
             text-decoration: none;
+            text-transform: uppercase;
         }
     }
 
-    & > .logo {
-        font-size: 38px;
+    & .logo {
+        font-size:35px;
         justify-content: center;
 
         @include mq(md) {
@@ -276,6 +299,73 @@
     &__world {
         color: $cWineRed;
     }
+}
+
+.side {
+  display: none;
+  position: fixed;
+  top: 70%;
+  translate: translateY(-50%);
+
+
+  @include mq(xl) {
+    display: block;
+  }
+
+  & .tween-animate-title {
+    color: $cBlack;
+    text-decoration: none !important;
+    margin: 0 40px;
+    vertical-align: middle;
+    letter-spacing: 2px;
+  }
+
+  &__inner {
+    transform-origin: top left;
+    transform: rotate(-90deg);
+  }
+
+  &.left {
+    left: 50px;
+
+    & .side__inner {
+      transform-origin: top left;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &.right {
+    right: 50px;
+
+    & .side__inner {
+      transform-origin: top right;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.icon {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 1em;
+    height: 1em;
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: none;
+    background-size: contain;
+  }
+
+  &.twitter::before {
+    background-image: url(../images/twitter.svg);
+  }
+  &.fb::before {
+    background-image: url(../images/facebook.svg);
+  }
 }
 
 
