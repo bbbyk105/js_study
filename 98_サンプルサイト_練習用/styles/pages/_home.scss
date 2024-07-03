@@ -19,71 +19,76 @@ main {
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: $navHeight;
-    background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navHeight;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+
+  &.triggered {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0 25px -10px rgba (0, 0, 0, 0.5);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend .content-width;
+  }
+
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: cover;
+    text-align: center;
+
+    display: none;
+    @include mq(lg) {
+      display: block;
+    }
+  }
+
+  &__ul {
     display: flex;
     align-items: center;
-    z-index: 100;
+    list-style: none;
+    padding: 0;
+  }
 
-    &.triggered {
-      background-color: rgba(255,255,255,0.9);
-      box-shadow: 10px 0 25px -10px rgba (0,0,0,0.5)  ;
+  &__li {
+    margin: 10px;
+
+    @include mq(md) {
+      margin-left: 30px;
+      margin-right: 0;
     }
 
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @extend .content-width;
+    & > a {
+      color: $cBlack;
+      text-decoration: none;
+      text-transform: uppercase;
     }
+  }
 
-    &__nav {
-        @extend .flex;
-        justify-content: space-between;
-        align-items: cover;
-        text-align: center;
+  & .logo {
+    justify-content: center;
 
-        display: none;
-        @include mq(lg) {
-          display: block;
-        }
+    @include mq(md) {
+      font-size: 35px;
+      justify-content: flex-start;
     }
-
-    &__ul {
-        display:flex;
-        align-items: center;
-        list-style: none;
-        padding: 0;
-    }
-
-    &__li {
-        margin: 10px;
-
-        @include mq(md) {
-            margin-left: 0;
-            margin-right: 30px;
-        }
-
-        & > a {
-            color: $cBlack;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-    }
-
-    & .logo {
-        font-size:35px;
-        justify-content: center;
-
-        @include mq(md) {
-            justify-content: flex-start;
-        }
-    }
+  }
 }
+
+.hero {
+  @extend .pb-lg;
+}
+
 .travel {
   @extend .content-width;
   @extend .mb-lg;
@@ -102,7 +107,7 @@ main {
       padding: 50px 150px;
     }
   }
-  &__img  {
+  &__img {
     height: 300px;
     @extend .mb-sm;
 
@@ -152,6 +157,15 @@ main {
   }
 }
 
+@keyframes scaleX {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 .houses {
   @extend .content-width;
   @extend .mb-lg;
@@ -181,7 +195,6 @@ main {
 }
 
 .popular {
-
   &__header {
     @extend .content-width;
   }
@@ -197,7 +210,6 @@ main {
       height: 90%;
       width: 100%;
       background-color: $cBgGray;
-
     }
   }
 
@@ -244,61 +256,60 @@ main {
     flex-basis: 100%;
     @extend .mb-lg;
   }
-  
 }
 
 .footer {
-    padding: 60px 0;
-    @extend .content-width;
+  padding: 60px 0;
+  @extend .content-width;
 
-    &__nav {
-        @extend .flex;
-        justify-content: space-between;
-        align-items: cover;
-        text-align: center;
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: cover;
+    text-align: center;
+  }
+
+  &__ul {
+    @extend .flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__li {
+    margin: 10px;
+
+    @include mq(md) {
+      margin-left: 0;
+      margin-right: 30px;
     }
 
-    &__ul {
-        @extend .flex;
-        list-style: none;
-        padding: 0;
+    & > a {
+      color: $cSubTitle;
+      text-decoration: none;
     }
+  }
 
-    &__li {
-        margin: 10px;
+  & > .logo {
+    font-size: 38px;
+    justify-content: center;
 
-        @include mq(md) {
-            margin-left: 0;
-            margin-right: 30px;
-        }
-
-        & > a {
-            color: $cSubTitle;
-            text-decoration: none;
-        }
+    @include mq(md) {
+      justify-content: flex-start;
     }
-
-    & > .logo {
-        font-size: 38px;
-        justify-content: center;
-
-        @include mq(md) {
-            justify-content: flex-start;
-        }
-    }
+  }
 }
 
 .logo {
-    font-size: 42px;
-    display: flex;
+  font-size: 42px;
+  display: flex;
 
-    &__image {
-        width: 0.7em;
-    }
+  &__image {
+    width: 0.7em;
+  }
 
-    &__world {
-        color: $cWineRed;
-    }
+  &__world {
+    color: $cWineRed;
+  }
 }
 
 .side {
@@ -306,7 +317,6 @@ main {
   position: fixed;
   top: 70%;
   translate: translateY(-50%);
-
 
   @include mq(xl) {
     display: block;
@@ -367,7 +377,3 @@ main {
     background-image: url(../images/facebook.svg);
   }
 }
-
-
-
-
