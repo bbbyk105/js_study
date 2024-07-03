@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>StayWorld</title>
+    <meta name="description" content="This is a test site">
+    <link rel="icon" href="images/favicon.png">
+    <!-- OGP 内部SEO -->
     <script src="scripts/vendors/pace.js"></script>
     <link rel="stylesheet" href="styles/loader.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +20,18 @@
     <link rel="stylesheet" href="styles/vendors/css-reset.css" />
     <link rel="stylesheet" href="styles/vendors/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
+
+    <script src="scripts/vendors/gsap.min.js" defer></script>
+    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
+    <script src="scripts/libs/hero-slider.js" defer></script>
+
+    <script src="scripts/vendors/scroll-polyfill.js"defer></script>
+    <script src="scripts/libs/scroll.js"defer></script>
+
+    <script src="scripts/libs/mobile-menu.js"defer></script>
+
+    <script src="scripts/libs/text-animation.js"defer></script>
+    <script src="scripts/main.js"defer></script>
   </head>
   <body>
     <div id="global-container">
@@ -24,17 +39,17 @@
         <div class="mobile-menu__cover"></div>
         <div class="nav-trigger"></div>
         <header class="header">
-          <div class="header__inner">
-            <div class="logo">
+          <div class="header__inner appear up">
+            <div class="logo item">
               <img class="logo__img" src="images/logo.svg" />
               <span class="logo__stay">Stay</span>
               <span class="logo__world">World</span>
             </div>
             <nav class="header__nav">
               <ul class="header__ul">
-                <li class="header__li"><a href="#">Service</a></li>
-                <li class="header__li"><a href="#">Company</a></li>
-                <li class="header__li"><a class="btn filled" href="#">Contact</a></li>
+                <li class="header__li item"><a href="#">Service</a></li>
+                <li class="header__li item"><a href="#">Company</a></li>
+                <li class="header__li item"><a class="btn filled" href="#">Contact</a></li>
               </ul>
             </nav>
             <button class="mobile-menu__btn">
@@ -81,7 +96,7 @@
                   <div class="travel__img">
                     <img class="img-zoom" src="images/image-travel.jpg" />
                   </div>
-                  <div class="travel__texts">
+                  <div class="travel__texts appear left">
                     <div class="travel__texts-inner">
                       <div class="travel__title main-title">
                         <span class="purple">Travel</span>
@@ -270,16 +285,6 @@
         </ul>
       </nav>
     </div>
-    <script src="scripts/vendors/gsap.min.js"></script>
-    <script src="scripts/vendors/swiper-bundle.min.js"></script>
-    <script src="scripts/libs/hero-slider.js"></script>
-
-    <script src="scripts/vendors/scroll-polyfill.js"></script>
-    <script src="scripts/libs/scroll.js"></script>
-
-    <script src="scripts/libs/mobile-menu.js"></script>
-
-    <script src="scripts/libs/text-animation.js"></script>
-    <script src="scripts/main.js"></script>
+    
   </body>
 </html>

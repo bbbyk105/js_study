@@ -336,7 +336,11 @@ main {
   }
 
   &.left {
-    left: 50px;
+    left: -50px;
+
+    &.inview {
+      left: 50px;
+    }
 
     & .side__inner {
       transform-origin: top left;
@@ -345,7 +349,11 @@ main {
   }
 
   &.right {
-    right: 50px;
+    right: -50px;
+
+    &.inview {
+      right: 50px;
+    }
 
     & .side__inner {
       transform-origin: top right;
